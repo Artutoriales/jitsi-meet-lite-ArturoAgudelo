@@ -856,41 +856,13 @@ var config = {
     // - it's possible to reorder the buttons in the maintoolbar by changing the order of the mainToolbarButtons
     // - 'desktop' controls the "Share your screen" button
     // - if `toolbarButtons` is undefined, we fallback to enabling all buttons on the UI
-    // toolbarButtons: [
-    //    'camera',
-    //    'chat',
-    //    'closedcaptions',
-    //    'desktop',
-    //    'download',
-    //    'embedmeeting',
-    //    'etherpad',
-    //    'feedback',
-    //    'filmstrip',
-    //    'fullscreen',
-    //    'hangup',
-    //    'help',
-    //    'highlight',
-    //    'invite',
-    //    'linktosalesforce',
-    //    'livestreaming',
-    //    'microphone',
-    //    'noisesuppression',
-    //    'participants-pane',
-    //    'profile',
-    //    'raisehand',
-    //    'recording',
-    //    'security',
-    //    'select-background',
-    //    'settings',
-    //    'shareaudio',
-    //    'sharedvideo',
-    //    'shortcuts',
-    //    'stats',
-    //    'tileview',
-    //    'toggle-camera',
-    //    'videoquality',
-    //    'whiteboard',
-    // ],
+    toolbarButtons: [
+       'microphone',
+        'camera',
+        'chat',
+        'raisehand',
+        'hangup'
+    ],
 
     // Holds values related to toolbar visibility control.
     // toolbarConfig: {
@@ -915,15 +887,15 @@ var config = {
     // more than 8 buttons or less then 2 buttons will be ignored. When there there isn't an override for a certain
     // configuration (for example when 3 buttons are displayed) the default jitsi-meet configuration will be used.
     // The order of the buttons in the array is preserved.
-    // mainToolbarButtons: [
-    //     [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'reactions', 'participants-pane', 'tileview' ],
-    //     [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane', 'tileview' ],
-    //     [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane' ],
-    //     [ 'microphone', 'camera', 'desktop', 'chat', 'participants-pane' ],
-    //     [ 'microphone', 'camera', 'chat', 'participants-pane' ],
-    //     [ 'microphone', 'camera', 'chat' ],
-    //     [ 'microphone', 'camera' ]
-    // ],
+    mainToolbarButtons: [
+        // [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'reactions', 'participants-pane', 'tileview' ],
+        // [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane', 'tileview' ],
+        // [ 'microphone', 'camera', 'desktop', 'chat', 'raisehand', 'participants-pane' ],
+        [ 'microphone', 'camera', 'desktop', 'chat', 'participants-pane' ],
+        [ 'microphone', 'camera', 'chat', 'participants-pane' ],
+        [ 'microphone', 'camera', 'chat' ],
+        [ 'microphone', 'camera' ]
+    ],
 
     // Enable reduced UI on web.
     // reducedUIEnabled: true,
@@ -1031,7 +1003,7 @@ var config = {
 
     // List of pre meeting screens buttons to hide. The values must be one or more of the 5 allowed buttons:
     // 'microphone', 'camera', 'select-background', 'invite', 'settings'
-    // hiddenPremeetingButtons: [],
+    // hiddenPremeetingButtons: ['join'],
 
     // An array with custom option buttons for the participant context menu
     // type:  Array<{ icon: string; id: string; text: string; }>

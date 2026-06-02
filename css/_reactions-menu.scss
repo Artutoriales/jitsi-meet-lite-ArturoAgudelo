@@ -38,7 +38,9 @@
 			justify-content: space-around;
 
 			.toolbox-button {
-				margin-right: 0;
+				transform: scale(5) !important; 
+				margin: 0 16px !important;         
+				transition: transform 0.2s ease !important;
 			}
 
 			.toolbox-button:last-of-type {

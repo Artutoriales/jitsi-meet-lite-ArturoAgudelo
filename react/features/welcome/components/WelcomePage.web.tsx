@@ -279,26 +279,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
                             </div>)}
                     </div>
                 </div>
-
-                <div className = 'welcome-cards-container'>
-                    <div className = 'welcome-card-column'>
-                        <div className = 'welcome-tabs welcome-card welcome-card--blue'>
-                            {this._renderTabs()}
-                        </div>
-                        {showAdditionalCard
-                            ? <div
-                                className = 'welcome-card welcome-card--dark'
-                                ref = { this._setAdditionalCardRef } />
-                            : null}
-                    </div>
-
-                    {showAdditionalContent
-                        ? <div
-                            className = 'welcome-page-content'
-                            ref = { this._setAdditionalContentRef } />
-                        : null}
-                </div>
-                {DISPLAY_WELCOME_FOOTER && this._renderFooter()}
+                {/* SPRINT 3: Se eliminaron las tarjetas de historial, contenido adicional y footer para limpieza visual absoluta */}
             </div>
 
         );
@@ -420,39 +401,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
      * @returns {ReactElement|null}
      */
     _renderTabs() {
-        if (isMobileBrowser()) {
-            return null;
-        }
-
-        const { _calendarEnabled, _recentListEnabled, t } = this.props;
-
-        const tabs = [];
-
-        if (_calendarEnabled) {
-            tabs.push({
-                id: 'calendar',
-                label: t('welcomepage.upcomingMeetings'),
-                content: <CalendarList />
-            });
-        }
-
-        if (_recentListEnabled) {
-            tabs.push({
-                id: 'recent',
-                label: t('welcomepage.recentMeetings'),
-                content: <RecentList />
-            });
-        }
-
-        if (tabs.length === 0) {
-            return null;
-        }
-
-        return (
-            <Tabs
-                accessibilityLabel = { t('welcomepage.meetingsAccessibilityLabel') }
-                tabs = { tabs } />
-        );
+            return null; 
     }
 
     /**

@@ -33,6 +33,9 @@ import { LeaveConferenceButton } from './LeaveConferenceButton';
 import OverflowMenuButton from './OverflowMenuButton';
 import Separator from './Separator';
 
+
+import { copyText } from '../../../base/util/copyText';
+import { showNotification } from '../../../notifications/actions';
 /**
  * The type of the React {@code Component} props of {@link Toolbox}.
  */
@@ -93,7 +96,14 @@ export default function Toolbox({
     const buttonsWithNotifyClick
         = useSelector((state: IReduxState) => state['features/toolbox'].buttonsWithNotifyClick);
     const reduxToolbarButtons = useSelector((state: IReduxState) => state['features/toolbox'].toolbarButtons);
-    const toolbarButtonsToUse = toolbarButtons || reduxToolbarButtons;
+    let toolbarButtonsToUse = toolbarButtons || reduxToolbarButtons;
+        toolbarButtonsToUse = [
+        'microphone',
+        'camera',
+        'chat',
+        'raisehand',
+        'hangu
+    ];
     const isDialogVisible = useSelector((state: IReduxState) => Boolean(state['features/base/dialog'].component));
     const localParticipant = useSelector(getLocalParticipant);
     const transcribing = useSelector(isTranscribing);
